@@ -44,10 +44,9 @@ multiplyNums(5,5, function(z) {
   console.log(z);
 })
 
-
+//contains
 let myList = ['testing', '1', 'two', 'three']
 
-//contains
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
