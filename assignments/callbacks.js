@@ -24,67 +24,67 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 
-//HOF 
-function higherOrderFunction(arr, cb) {
-  return cb(arr);
-}
 
-
+//length
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  return arr.length;
+  return cb(arr.length);
 }
-console.log(higherOrderFunction(items,getLength));
 
+getLength(items, function(x) {
+  console.log(x);
+})
 
+//last
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return arr[arr.length - 1];
-}
-console.log(higherOrderFunction(items,last))
-
-
-
-//HOF Math
-function higherOrderFunctionMath(x, y, cb) {
-  return cb(x,y);
+  return cb(arr[arr.length - 1]);
 }
 
+last(items, function(x) {
+  console.log(x);
+})
 
+
+//sum
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return x + y;
+  return cb(x + y);
 }
-console.log(higherOrderFunctionMath(1,2,sumNums));
+
+sumNums(3,6, function(z) {
+  console.log(z);
+});
 
 
+//mulitply
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  return x * y;
+  return cb(x * y);
 }
-console.log(higherOrderFunctionMath(5,5,multiplyNums));
 
+multiplyNums(5,5, function(z) {
+  console.log(z);
+})
 
-//HOF Contains
-function higherOrderFunctionContains(item, list, cb) {
-  return cb(item,list);
-}
 
 let myList = ['testing', '1', 'two', 'three']
 
-
+//contains
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   list.forEach(function(x) {
     if (x === item) {
-      console.log(x)
-      return true;
+      // console.log(x)
+      return cb(true);
     }
   });
 }
-console.log(higherOrderFunctionContains('two',myList,contains))
 
+contains('two',myList, function(z){
+  console.log(z);
+});
 
 
 /* STRETCH PROBLEM */
