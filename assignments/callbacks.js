@@ -24,10 +24,26 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
+//HOF 
+function higherOrderFunction(arr, cb) {
+  return cb(arr);
+}
+
+
+//test
+function test(arr, cb) {
+  return "testing";
+}
+
+console.log(higherOrderFunction(items,test));
+
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return arr.length;
 }
+console.log(higherOrderFunction(items,getLength));
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
