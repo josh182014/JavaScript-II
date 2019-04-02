@@ -6,12 +6,12 @@ function SW() {
   console.log(`${vador}: I am your father`);
   debugger;
   
-  function SWA() {
-    const anakin = "Anakin";
-    console.log(`${anakin} to ${vador}: No. No! That’s not true! That’s impossible!`);
+  function SWL() {
+    const luke = "Luke";
+    console.log(`${luke} to ${vador}: No. No! That’s not true! That’s impossible!`);
   
   }
-  SWA();
+  SWL();
 }
 SW();
 
